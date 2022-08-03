@@ -3,7 +3,7 @@ console.log(pixar);
 
 const App = () => {
   const container = document.createElement("div");
-  container.className = "container"
+  container.className = "container";
   const arrCards = generadorImagenes(pixar.items);
   for (let i = 0; i < arrCards.length; i++) {
     container.appendChild(arrCards[i]);
@@ -11,9 +11,6 @@ const App = () => {
 
   return container;
 };
-
-const aleatorio = () => {};
-
 const generadorImagenes = (data) => {
   data.sort(() => Math.random() - 0.5);
 
@@ -23,7 +20,7 @@ const generadorImagenes = (data) => {
 
     const front = document.createElement("div");
     const imgFront = document.createElement("img");
-    imgFront.classList ="imgFront"
+    imgFront.classList = "imgFront";
     imgFront.setAttribute("src", item.image);
     front.appendChild(imgFront);
 

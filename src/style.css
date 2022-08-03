@@ -21,19 +21,8 @@ body {
 }
 .titulo {
   text-align: center;
-  font-family: "Square Peg", cursive;
+  font-family: 'Dancing Script', cursive;
   color: #e4e7ee;
-}
-.jugar {
-  text-align: center;
-  vertical-align: bottom;
-  height: 10%;
-  width: 20%;
-  bottom: 0px;
-  position: absolute;
-  box-shadow: inset 0px 0px 0px 0px #dcecfb;
-  background-color: transparent;
-  border-radius: 10px;
 }
 .imgFront{
   width: 170px;
@@ -43,11 +32,25 @@ body {
   display: grid;
   grid-template-rows:auto auto auto auto;
   grid-template-columns: auto auto auto auto;
-  perspective: 500px;
-  grid-gap: 2rem;
-  height: 10%;
-  width: 10%;
+  height: 20%;
+  width: 20%;
   position: relative;
   left: 200px;
   perspective: 1000px;
+}
+.boton{
+  position: relative;
+  right: 300px;
+}
+.ayuda {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  vertical-align: bottom;
+  height: 10%;
+  width: 20%;
+  bottom: 0px;
+  position: absolute;
+  box-shadow: inset 0px 0px 0px 0px #dcecfb;
+  background-color: transparent;
+  border-radius: 10px;
 }
