@@ -1,0 +1,21 @@
+export default {
+  name: 'Pixar',
+  items: [
+    { id: 'increibles', image: 'https://wallpaperaccess.com/full/2591515.jpg', bgColor: '#339933' },
+    { id: 'ratatoullie', image: 'https://wallpaperaccess.com/full/2591501.jpg', bgColor: '#339933' },
+    { id: 'valiente', image: 'https://wallpaperaccess.com/full/2591521.jpg', bgColor: '#339933' },
+    { id: 'intensamente', image: 'https://wallpaperaccess.com/full/711454.jpg', bgColor: '#F05032' },
+    { id: 'monsterinc', image: 'https://wallpaperaccess.com/full/4075876.jpg', bgColor: '#F05032' },
+    { id: 'toystory', image: 'https://wallpaperaccess.com/full/4076108.jpg', bgColor: '#1572B6' },
+    { id: 'up', image: 'https://wallpaperaccess.com/full/4076209.jpg', bgColor: '#1572B6' },
+    { id: 'coco', image: 'https://wallpaperaccess.com/full/2591520.jpg', bgColor: '#1572B6' },
+    { id: 'increibles', image: 'https://wallpaperaccess.com/full/2591515.jpg', bgColor: '#339933' },
+    { id: 'ratatoullie', image: 'https://wallpaperaccess.com/full/2591501.jpg', bgColor: '#339933' },
+    { id: 'valiente', image: 'https://wallpaperaccess.com/full/2591521.jpg', bgColor: '#339933' },
+    { id: 'intensamente', image: 'https://wallpaperaccess.com/full/711454.jpg', bgColor: '#F05032' },
+    { id: 'monsterinc', image: 'https://wallpaperaccess.com/full/4075876.jpg', bgColor: '#F05032' },
+    { id: 'toystory', image: 'https://wallpaperaccess.com/full/4076108.jpg', bgColor: '#1572B6' },
+    { id: 'up', image: 'https://wallpaperaccess.com/full/4076209.jpg', bgColor: '#1572B6' },
+    { id: 'coco', image: 'https://wallpaperaccess.com/full/2591520.jpg', bgColor: '#1572B6' },
+  ],
+};
