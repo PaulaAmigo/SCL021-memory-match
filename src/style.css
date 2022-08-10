@@ -13,10 +13,6 @@
     background-position: top right;
   }
 }
-.titulo {
-  font-family: 'Dancing Script', cursive;
-  color: #e4e7ee;
-}
 .frontimg{
   width: 150px;
   height: 150px;
@@ -44,23 +40,13 @@
   padding:20px 40px;
   cursor:pointer;
   background-color: transparent;
-  font-family: 'Dancing Script bold', cursive;
+  font-family: 'Inspiration', cursive;
+  border-radius: 10px;
+  font-size: 3ch;
+  box-shadow: inset 0px 0px 0px 0px #dcecfb;
 }
 .instrucciones:hover{
 	background-color:#e1e7ed;
-}
-.ayuda {
-  font-family: 'Dancing Script', cursive;
-  font-size: 40ch;
-  text-align: center;
-  vertical-align: bottom;
-  height: 10%;
-  width: 20%;
-  bottom: 0px;
-  position: absolute;
-  box-shadow: inset 0px 0px 0px 0px #dcecfb;
-  background-color: transparent;
-  border-radius: 10px;
 }
 .musica { 
   position: relative;
