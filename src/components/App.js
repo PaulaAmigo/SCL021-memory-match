@@ -3,12 +3,23 @@ import pixar from "../data/pixar/pixar.js";
 const imageback = pixar.ball[0].image; //la imagen de la pelota, la que se ve al comienzo del juego
 let selectedCards = []; //crear el arreglo vacio
 
-let botonJuego = document.querySelector(".instrucciones");
+let botonJuego = document.querySelector(".boton2"); //creamos la variables y buscamos el botón del html
 botonJuego.addEventListener("click", () => {
   let audioUp = document.createElement("audio");
   audioUp.setAttribute("src", "sonido.mp3");
-  audioUp.play();
-}); // boton de audio
+  audioUp.play();// boton de audio para las instucciones
+});
+const popup = document.querySelector("#popup");
+const instrucciones = document.querySelector(".instrucciones");
+const cerrar = document.querySelector(".boton2"); 
+//funciones para crear el popUp
+
+instrucciones.addEventListener("click", () => {
+  popup.show();
+});
+cerrar.addEventListener("click", () => {
+  popup.close();
+});//popup con las instrucciones de como jugar
 
 //variable de la imagen del balon de pixar, que se creo en pixar.js
 
@@ -42,22 +53,31 @@ const generadorImagenes = (data) => {
     imgFront.addEventListener("click", function (event) {
       imgFront.setAttribute("src", item.image);
       selectedCards.push(imgFront);
-      //console.log(selectCards);
+      console.log(selectedCards);
       if (selectedCards.length === 2) {//que tome dos cartas para luego hacer le "if"
-        
-        if(selectedCards[0] === selectedCards[1]){ //comparamos ambos
+        console.log(selectedCards[0].src)
+        if(selectedCards[0].src === selectedCards[1].src){ //comparamos ambos
           console.log("match")
+          selectedCards = [];
           
-        //} else{
-          //selectedCards[0].setAttribute("src", imageback);
-          //selectedCards[1].setAttribute("src", imageback);
-           // que se devuelva a la imagen de la pelota
+        } else{
+          setTimeout(()=> {
+          selectedCards[0].setAttribute("src", imageback);
+          selectedCards[1].setAttribute("src", imageback);
+          selectedCards = [];
+        }, 1000)
+         //que se devuelva a la imagen de la pelota
         }
-        selectedCards = []; //cuando no sean iguales que vuelva a hacer el if desde el comienzo
+    //const music = document.querySelector(".musica")
+    //music.addEventListener("click", () => {
+      //let audiotoystory = document.createElement("musica")
+      //audiotoystory.
+    //} )
+         //cuando no sean iguales que vuelva a hacer el if desde el comienzo
         //console.log("verificar aquí");
         //que verifique que sean iguales y las deje, y si no son iguales que se devuelva a la imagen de la pelota
       }
-      event.target.setAttribute("src", item.image);
+      //event.target.setAttribute("src", item.image);
       //si las imagenes son iguales se mantengas, de lo contrario que vuelva la imagen de la pelota
     });
     front.appendChild(imgFront);
