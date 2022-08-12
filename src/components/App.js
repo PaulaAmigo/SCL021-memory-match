@@ -3,15 +3,9 @@ import pixar from "../data/pixar/pixar.js";
 const imageback = pixar.ball[0].image; //la imagen de la pelota, la que se ve al comienzo del juego
 let selectedCards = []; //crear el arreglo vacio
 
-let botonJuego = document.querySelector(".boton2"); //creamos la variables y buscamos el botón del html
-botonJuego.addEventListener("click", () => {
-  let audioUp = document.createElement("audio");
-  audioUp.setAttribute("src", "sonido.mp3");
-  audioUp.play();// boton de audio para las instucciones
-});
 const popup = document.querySelector("#popup");
 const instrucciones = document.querySelector(".instrucciones");
-const cerrar = document.querySelector(".boton2"); 
+const cerrar = document.querySelector(".boton2");
 //funciones para crear el popUp
 
 instrucciones.addEventListener("click", () => {
@@ -19,33 +13,39 @@ instrucciones.addEventListener("click", () => {
 });
 cerrar.addEventListener("click", () => {
   popup.close();
-});//popup con las instrucciones de como jugar
+}); //popup con las instrucciones de como jugar
 
-//variable de la imagen del balon de pixar, que se creo en pixar.js
-
+let botonJuego = document.querySelector(".boton2"); //creamos la variables y buscamos el botón del html
+botonJuego.addEventListener("click", () => {
+  let audioUp = document.createElement("audio");
+  audioUp.setAttribute("src", "sonido.mp3");
+  audioUp.play(); // boton de audio para las instucciones
+});
 const App = () => {
   const container = document.createElement("div"); //container es lo que se muestra en html
-  container.className = "container";//creamos la clase para modificarlo en CSS
-  const arrCards = generadorImagenes(pixar.items);//arrCards contiene las imagenes
+  container.className = "container"; //creamos la clase para modificarlo en CSS
+  const arrCards = generadorImagenes(pixar.items); //arrCards contiene las imagenes
   arrCards.className = "arrcards";
-  for (let i = 0; i < arrCards.length; i++) {/*recorremos el arrCards que contiene la imagenes, y 
+  for (let i = 0; i < arrCards.length; i++) {
+    /*recorremos el arrCards que contiene la imagenes, y 
   llama las imagenes al container para que se vean en el html */
     container.appendChild(arrCards[i]);
   }
   return container;
 };
-
-//const aleatorio = () => {
-//};
-
 const generadorImagenes = (data) => {
   data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
   const arrCards = [];
-  
-  data.forEach((item) => {//Que recorra carta por carta
+  let contadorDeIntentos= 3;
+  let intentos = document.querySelector(".intentos")
+  intentos.textContent="intentos:" + contadorDeIntentos;
+  console.log (intentos)
+
+  data.forEach((item) => {
+    //Que recorra carta por carta
     const carta = document.createElement("div");
     carta.className = "cartas";
-    const front = document.createElement("div"); 
+    const front = document.createElement("div");
     front.className = "front";
     const imgFront = document.createElement("img");
     imgFront.className = "frontimg";
@@ -54,26 +54,30 @@ const generadorImagenes = (data) => {
       imgFront.setAttribute("src", item.image);
       selectedCards.push(imgFront);
       console.log(selectedCards);
-      if (selectedCards.length === 2) {//que tome dos cartas para luego hacer le "if"
-        console.log(selectedCards[0].src)
-        if(selectedCards[0].src === selectedCards[1].src){ //comparamos ambos
-          console.log("match")
+      if (selectedCards.length === 2) {
+        //que tome dos cartas para luego hacer le "if"
+        console.log(selectedCards[0].src);
+        if (selectedCards[0].src === selectedCards[1].src) {
+          //comparamos ambos
+          console.log("match");
           selectedCards = [];
-          
-        } else{
-          setTimeout(()=> {
-          selectedCards[0].setAttribute("src", imageback);
-          selectedCards[1].setAttribute("src", imageback);
-          selectedCards = [];
-        }, 1000)
-         //que se devuelva a la imagen de la pelota
+        } else {
+          contadorDeIntentos--;
+          intentos.textContent="intentos:" + contadorDeIntentos;
+          console.log (contadorDeIntentos)
+          setTimeout(() => {
+            selectedCards[0].setAttribute("src", imageback);
+            selectedCards[1].setAttribute("src", imageback);
+            selectedCards = [];
+          }, 1000);
+          //que se devuelva a la imagen de la pelota
         }
-    //const music = document.querySelector(".musica")
-    //music.addEventListener("click", () => {
-      //let audiotoystory = document.createElement("musica")
-      //audiotoystory.
-    //} )
-         //cuando no sean iguales que vuelva a hacer el if desde el comienzo
+        //const music = document.querySelector(".musica")
+        //music.addEventListener("click", () => {
+        //let audiotoystory = document.createElement("musica")
+        //audiotoystory.
+        //} )
+        //cuando no sean iguales que vuelva a hacer el if desde el comienzo
         //console.log("verificar aquí");
         //que verifique que sean iguales y las deje, y si no son iguales que se devuelva a la imagen de la pelota
       }
