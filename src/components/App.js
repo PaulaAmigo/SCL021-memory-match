@@ -18,8 +18,8 @@ cerrar.addEventListener("click", () => {
 let botonJuego = document.querySelector(".boton2"); //creamos la variables y buscamos el botón del html
 botonJuego.addEventListener("click", () => {
   let audioUp = document.createElement("audio");
-  audioUp.setAttribute("src", "sonido.mp3");
-  audioUp.play(); // boton de audio para las instucciones
+  audioUp.setAttribute("src", "./audio/sonido.mp3");
+  audioUp.play(); // boton de audio para ir a juagar
 });
 const App = () => {
   const container = document.createElement("div"); //container es lo que se muestra en html
@@ -36,10 +36,10 @@ const App = () => {
 const generadorImagenes = (data) => {
   data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
   const arrCards = [];
-  let contadorDeIntentos= 3;
-  let intentos = document.querySelector(".intentos")
-  intentos.textContent="intentos:" + contadorDeIntentos;
-  console.log (intentos)
+  let contadorDeIntentos = 7;
+  let intentos = document.querySelector(".intentos");
+  intentos.textContent = "intentos:" + contadorDeIntentos;
+  //console.log (intentos)
 
   data.forEach((item) => {
     //Que recorra carta por carta
@@ -50,36 +50,46 @@ const generadorImagenes = (data) => {
     const imgFront = document.createElement("img");
     imgFront.className = "frontimg";
     imgFront.setAttribute("src", imageback);
-    imgFront.addEventListener("click", function (event) {
-      imgFront.setAttribute("src", item.image);
+    imgFront.addEventListener("click", function () {
+      //console.log(selectedCards.length, ' + ', contadorDeIntentos)
+
       selectedCards.push(imgFront);
-      console.log(selectedCards);
-      if (selectedCards.length === 2) {
-        //que tome dos cartas para luego hacer le "if"
-        console.log(selectedCards[0].src);
-        if (selectedCards[0].src === selectedCards[1].src) {
-          //comparamos ambos
-          console.log("match");
-          selectedCards = [];
-        } else {
-          contadorDeIntentos--;
-          intentos.textContent="intentos:" + contadorDeIntentos;
-          console.log (contadorDeIntentos)
-          setTimeout(() => {
-            selectedCards[0].setAttribute("src", imageback);
-            selectedCards[1].setAttribute("src", imageback);
+      //console.log(selectedCards);<
+      if (contadorDeIntentos > 0) {
+        imgFront.setAttribute("src", item.image);
+        if (selectedCards.length === 2) {
+          //que tome dos cartas para luego hacer le "if"
+          //console.log(selectedCards[0].src);
+          if (selectedCards[0].src === selectedCards[1].src) {
+            //comparamos ambos
+            //console.log("match");
             selectedCards = [];
-          }, 1000);
-          //que se devuelva a la imagen de la pelota
+          } else {
+            contadorDeIntentos--;
+            intentos.textContent = "intentos:" + contadorDeIntentos;
+            //console.log (contadorDeIntentos)
+            setTimeout(() => {
+              selectedCards[0].setAttribute("src", imageback);
+              selectedCards[1].setAttribute("src", imageback);
+              selectedCards = [];
+            }, 1000);
+            //que se devuelva a la imagen de la pelota
+          }
+          //const music = document.querySelector(".musica")
+          //music.addEventListener("click", () => {
+          //let audiotoystory = document.createElement("musica")
+          //audiotoystory.
+          //} )
+          //cuando no sean iguales que vuelva a hacer el if desde el comienzo
+          //console.log("verificar aquí");
+          //que verifique que sean iguales y las deje, y si no son iguales que se devuelva a la imagen de la pelota
         }
-        //const music = document.querySelector(".musica")
-        //music.addEventListener("click", () => {
-        //let audiotoystory = document.createElement("musica")
-        //audiotoystory.
-        //} )
-        //cuando no sean iguales que vuelva a hacer el if desde el comienzo
-        //console.log("verificar aquí");
-        //que verifique que sean iguales y las deje, y si no son iguales que se devuelva a la imagen de la pelota
+      } else {
+        //setTimeout(() => {
+        selectedCards[0].setAttribute("src", imageback);
+
+        selectedCards = [];
+        //}, 1000);
       }
       //event.target.setAttribute("src", item.image);
       //si las imagenes son iguales se mantengas, de lo contrario que vuelva la imagen de la pelota

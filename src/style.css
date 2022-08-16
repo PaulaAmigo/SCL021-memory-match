@@ -4,6 +4,7 @@
   height: 100vh;
   animation: movimiento 10s infinite linear alternate;
   font-family: fantasy;
+  color:rgb(71, 75, 75)
 }
 @keyframes movimiento {
   from{
@@ -26,7 +27,7 @@
   width: 15%;
   position: relative;
   left: 500px;
-  bottom: 180px;
+  bottom: 250px;
   perspective: 1000px;
   cursor: pointer;
   grid-gap: 2ch;
@@ -49,7 +50,7 @@
 }
 .musica { 
   position: relative;
-  width: 200px; 
+  width: 150px; 
   box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
   border-radius: 50px;
   transform: scale(1.05);  
@@ -75,4 +76,7 @@
 }
 .boton2{
   font-family: fantasy;
+}
+.intentos {
+  font-size: 2ch;
 }
