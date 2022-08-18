@@ -1,17 +1,18 @@
-:root {
-  background-image: url(./juego1.jpeg);
+html{
+  background-image: url(./up.jpeg);
   background-size: cover;
   height: 100vh;
   animation: movimiento 10s infinite linear alternate;
   font-family: fantasy;
-  color:rgb(71, 75, 75)
+  color:rgb(71, 75, 75);
+  margin:0px;
 }
 @keyframes movimiento {
   from{
-    background-position: bottom left;
+    background-position: bottom;
   }
   to {
-    background-position: top right;
+    background-position: top ;
   }
 }
 .frontimg{

@@ -1,6 +1,7 @@
 import pixar from "../data/pixar/pixar.js";
 //console.log(pixar);
-const imageback = pixar.ball[0].image; //la imagen de la pelota, la que se ve al comienzo del juego
+const imageback = pixar.ball[0].image;
+//la imagen de la pelota, la que se ve al comienzo del juego
 let selectedCards = []; //crear el arreglo vacio
 
 const popup = document.querySelector("#popup");
@@ -36,9 +37,9 @@ const App = () => {
 const generadorImagenes = (data) => {
   data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
   const arrCards = [];
-  let contadorDeIntentos = 7;
+  let contadorDeIntentos = 10;
   let intentos = document.querySelector(".intentos");
-  intentos.textContent = "intentos:" + contadorDeIntentos;
+  intentos.textContent = " Intentos : " + contadorDeIntentos;
   //console.log (intentos)
 
   data.forEach((item) => {

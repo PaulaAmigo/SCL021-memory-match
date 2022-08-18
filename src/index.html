@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Pixar Memory Match</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <div class="inicio">
-        <h1>Vamos a jugar Memory Match</h1>
-      <audio class="musica"  controls loop src="./audio/ToyStory.mp3"></audio>
-      <iframe src="https://giphy.com/embed/yvya8Yi18YoX66tdCx" width="250" height="115" frameBorder="0" class="sticker" allowFullScreen></iframe>
-    </div>
-      <div class="boton">
-        <button class="instrucciones">¿Cómo jugar?</button>
-        <dialog class="popup" id="popup">
-          <p>El jugador debe darle click a 2 imagenes, si coinciden y tienen la misma imagen, estas quedan con la imagen visible y sigue presionando otras dos. Y si por el contrario no coinciden estas automaticamente vuelven a su posición inicial</p>
-          <button class="boton2">Vamos a jugar</button>
-        </dialog>
+    <div class="container1">
+      <!--Acá comienza lado izquierdo-->
+      <div>
+        <div class="inicio">
+          <header class="encabezado"><u></u></header>
+          <audio
+            class="musica"
+            controls
+            loop
+            src="./audio/ToyStory.mp3"
+          ></audio>
+          <iframe
+            src="https://giphy.com/embed/yvya8Yi18YoX66tdCx"
+            width="250"
+            height="115"
+            frameborder="0"
+            class="sticker"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="boton">
+          <button class="instrucciones">¿Cómo jugar?</button>
+          <dialog class="popup" id="popup">
+            <p>
+              El jugador debe darle click a 2 imagenes, si coinciden y tienen la
+              misma imagen, estas quedan con la imagen visible y sigue
+              presionando otras dos. Y si por el contrario no coinciden estas
+              automaticamente vuelven a su posición inicial
+            </p>
+            <button class="boton2">Vamos a jugar</button>
+          </dialog>
+        </div>
+        <div class="intentos"></div>
       </div>
-      <div class="intentos">
-       </div>
+
+      <!--Acá termina lado izquierdo-->
+      <div id="root"></div>
     </div>
-    
-  <script src="main.js" type="module"></script>
+
+    <script src="main.js" type="module"></script>
   </body>
 </html>
