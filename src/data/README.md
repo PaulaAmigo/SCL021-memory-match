@@ -1,38 +1,28 @@
-# Data (sets de cartas)
+# Memory Match
 
-Este directorio (carpeta) contiene dos fuentes de datos (sets de cartas) que
-podemos usar en el proyecto. Cada set está en una sub-carpeta distinta:
+Es un juego diseñado para niños que pone en dasfio su destreza mental.
+El jugador debe darle click a 2 imagenes, si coinciden y tienen la
+misma imagen, estas quedan con la imagen visible y sigue
+presionando otras dos. Y si por el contrario no coinciden estas
+automaticamente vuelven a su posición inicial
 
-* [`pokemon`](./pokemon)
-* [`webdev`](./webdev)
+### Investigación de usuario.md
 
-Dentro de cada carpeta encontrarás dos archivos: uno con la extensión `.js` y
-otro `.json`. Ambos archivos contienen la misma data; la diferencia es que el
-`.js` lo usaremos a través de un [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
-asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API).
+Creamos una encuesta online que se envió a posibles usuarios de nuestro Juego. En ella incluimos las siguientes preguntas (y sus resultados):
 
-## ¿Cómo agrego mis propios sets de cartas?
+![]([https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2FSQjg2GY%2FUsuario.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=qyhLDQRuMHBKBCynpnvWcN85YtfRKDe2MmEmujSWYBs%3D&reserved=0)
+![](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2FQjmb909%2FCaptura-de-Pantalla-2022-08-16-a-la-s-09-59-12.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=uyHkYtQgXkYN9m%2ByzmSpdwEvbOFNZYPFoDKweG%2FC%2Bhs%3D&reserved=0)
+![](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2FhfxSJS4%2FCaptura-de-Pantalla-2022-08-16-a-la-s-09-58-50.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=H1rxEJIlyzeEWAXTGg%2BBtF4ul70ud%2BU9ukq2rye5kA4%3D&reserved=0)
+![](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2Fp0pJG9V%2FCaptura-de-Pantalla-2022-08-16-a-la-s-09-58-22.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=knvyRL6w6FWtxDrOoGivB7qtf5mzDMBoCbNucJj0hSs%3D&reserved=0)
+![](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2FH2TsnrX%2FCaptura-de-Pantalla-2022-08-16-a-la-s-09-57-51.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=9g4Q1Usd%2BWWHYn%2B1r3etMQ1SvI5TL8MA2W1GtXQ2urk%3D&reserved=0)
+![](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.ibb.co%2FtJYVxjD%2FCaptura-de-Pantalla-2022-08-16-a-la-s-09-57-23.png&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=nW820rKP7%2FfHgRYj%2BEZa%2Fpv84oLkZlAqBdBzmLvNd5o%3D&reserved=0)
 
-Éstas no son las únicas cartas que podemos usar. Si quieres puedes añadir los
-sets de cartas que consideres para tu aplicación. Si eliges agregar sets de
-cartas te recomendamos mantener la misma estructura de los datos (ambos sets de
-ejemplo usan la misma estructura).
+###Historia de usuario.md
+-Con la investigación nos dimos cuenta que a los usuarios les gustaría que el juego incluyera musica especificamente el tema central de Toy Story.
 
-Por ejmplo, imaginemos que queremos agregar un set de cartas de gatitos. Para
-hacernos la vida más fácil, dupliquemos un set existente y modifiquémoslo:
+- Tambien les gustaría que el juego tenga intentos y que estos no sean más que 5.
 
-```sh
-# Desde el directorio raíz de la aplicación en el terminal, copiamos
-# recursivamente (con la opción `-r`, ya que se trata de un directorio) el
-# directorio `data/pokemon` a la ruta `data/gatitos`.
-cp -r data/pokemon data/gatitos
+###Despliegue de la página
+Para poder ver nuestro Resultado final del juego, se puede acceder a nuestra página haciendo click [aqui](https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpaulaamigo.github.io%2FSCL021-memory-match%2F&data=05%7C01%7C%7Cacc96a6cbd1c4b9ca49f08da8628041e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637969803668342297%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=MP7UJh8SztaokgF5J7A3vtVV25uMBm%2Bbl0m1vaJZaQ8%3D&reserved=0)
 
-# Renombramos los archivos de la carpeta gatitos...
-mv data/gatitos/pokemon.js data/gatitos/gatitos.js
-mv data/gatitos/pokemon.json data/gatitos/gatitos.json
-```
-
-Ahora ya puedes editar el contenido de los archivos de gatitos según tus
-necesidades. Ten en cuenta que puedes cambiar el número de elementos (cartas) en
-cada set si quieres también cambiar la dificultad del juego :wink:.
+###End
