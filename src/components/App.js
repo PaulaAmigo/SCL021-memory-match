@@ -43,13 +43,11 @@ const App = () => {
   return container;
 };
 const generadorImagenes = (data) => {
-  //data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
+  data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
   const arrCards = [];
-  let contadorDeIntentos = 1;
+  let contadorDeIntentos = 7;
   let intentos = document.querySelector(".intentos");
   intentos.textContent = " Intentos : " + contadorDeIntentos;
-
-  //console.log (intentos)
 
   data.forEach((item) => {
     //Que recorra carta por carta
@@ -61,15 +59,13 @@ const generadorImagenes = (data) => {
     imgFront.className = "frontimg";
     imgFront.setAttribute("src", imageback);
     imgFront.addEventListener("click", function () {
-      //console.log(selectedCards.length, ' + ', contadorDeIntentos)
-
       selectedCards.push(imgFront);
-      //console.log(selectedCards);<
+
       if (contadorDeIntentos > 0) {
         imgFront.setAttribute("src", item.image);
         if (selectedCards.length === 2) {
           //que tome dos cartas para luego hacer le "if"
-          //console.log(selectedCards[0].src);
+
           if (selectedCards[0].src === selectedCards[1].src) {
             //comparamos ambos
             selectedCards = [];
@@ -89,7 +85,6 @@ const generadorImagenes = (data) => {
             //que se devuelva a la imagen de la pelota
           }
           //cuando no sean iguales que vuelva a hacer el if desde el comienzo
-          //console.log("verificar aquí");
           //que verifique que sean iguales y las deje, y si no son iguales que se devuelva a la imagen de la pelota
         }
       } else {
@@ -104,10 +99,6 @@ const generadorImagenes = (data) => {
     front.appendChild(imgFront);
 
     const back = document.createElement("div");
-
-    carta.classList = "carta";
-    front.classList = "front";
-    back.classList = "back";
 
     carta.appendChild(front);
     carta.appendChild(back);
