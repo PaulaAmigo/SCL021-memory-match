@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 html{
-  background-image: url(./up.jpeg);
+  background-image: url(./ImgGif/up.jpeg);
   background-size: cover;
   height: 100vh;
   animation: movimiento 10s infinite linear alternate;
@@ -116,10 +116,9 @@ body{
 }
 #you-win{
   display: none;
-  display: none;
   position: relative;
-  left:800px;
-  top:20px;
+  left:500px;
+  bottom:200px;
   z-index: 2;
 
 }
@@ -127,7 +126,7 @@ body{
   display: none;
   position: fixed;
   left:500px;
-  top:70px;
+  bottom:200px;
   z-index: 2;
   border-radius: 20px;
 }
