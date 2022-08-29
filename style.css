@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 html{
-  background-image: url(./up.jpeg);
+  background-image: url(./ImgGif/up.jpeg);
   background-size: cover;
   height: 100vh;
   animation: movimiento 10s infinite linear alternate;
-  font-family: fantasy;
   color:rgb(71, 75, 75);
   margin:0px;
+  font-family: 'Indie Flower', cursive;
 }
 @keyframes movimiento {
   from{
@@ -14,6 +15,15 @@ html{
   to {
     background-position: top ;
   }
+}
+body{
+  display: flex;
+}
+.gif {
+  width: 500px;
+  height: 500px;
+  size: 1ch;
+  border: 0px;
 }
 .frontimg{
   width: 150px;
@@ -26,9 +36,9 @@ html{
   grid-template-columns: auto auto auto auto auto;
   height: 15%;
   width: 15%;
-  position: relative;
+  position: absolute;
   left: 500px;
-  bottom: 250px;
+  top: 100px;
   perspective: 1000px;
   cursor: pointer;
   grid-gap: 2ch;
@@ -41,10 +51,11 @@ html{
 .instrucciones{
   padding:20px 35px;
   cursor:pointer;
-  font-family: fantasy;
+  font-family: 'Indie Flower', cursive;
   border-radius: 10px;
-  font-size: 2ch;
+  font-size: 3ch;
   box-shadow: inset 0px 0px 0px 0px #dcecfb;
+  margin-left: 20px;
 }
 .instrucciones:hover{
 	background-color:#e1e7ed;
@@ -58,6 +69,37 @@ html{
   color: darkblue !important;
 }
 .popup {
+  width: 100%;
+  height: 240%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(50px);
+  top: calc(40% - 50px);
+  left: calc(25% - 30px);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  border: none;
+  font-family: 'Indie Flower', cursive;
+  z-index: 2;
+}
+.modal::backdrop{
+  background: rgba(220, 211, 211, 0.6);
+}
+.boton2{
+  font-family: fantasy;
+}
+.intentos {
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.881);
+  font-size: 4ch;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  width: 150px;
+ 
+  box-decoration-break: clone;
+}
+.popup2 {
   width: 50%;
   height: 160%;
   background: rgba(255, 255, 255, 0.8);
@@ -69,15 +111,32 @@ html{
   border-radius: 20px;
   box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
   border: none;
-  font-family: fantasy;
+  font-family: 'Indie Flower', cursive;
   z-index: 2;
 }
-.modal::backdrop{
-  background: rgba(220, 211, 211, 0.6);
+#you-win{
+  display: none;
+  position: relative;
+  left:500px;
+  bottom:200px;
+  z-index: 2;
+
 }
-.boton2{
-  font-family: fantasy;
+#you-lose{
+  display: none;
+  position: fixed;
+  left:500px;
+  bottom:200px;
+  z-index: 2;
+  border-radius: 20px;
 }
-.intentos {
-  font-size: 2ch;
+.buttonReplay{
+  padding:20px 35px;
+  cursor:pointer;
+  font-family: 'Indie Flower', cursive;
+  border-radius: 10px;
+  font-size: 3ch;
+  box-shadow: inset 0px 0px 0px 0px #dcecfb;
+  margin-left: 20px;
+  position: center;
 }

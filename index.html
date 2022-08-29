@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container1">
+    <div class="container2">
       <!--Acá comienza lado izquierdo-->
       <div>
         <div class="inicio">
           <header class="encabezado"><u></u></header>
           <audio
             class="musica"
+            autoplay
             controls
             loop
             src="./audio/ToyStory.mp3"
@@ -40,6 +41,32 @@
         </div>
         <div class="intentos"></div>
       </div>
+      <!--Ganaste-->
+      <section id="you-win">
+        <img src="./ImgGif/disneywin.gif" alt="ganaste" />
+        <div class="buttonReplay">
+          <button
+            type="buttom"
+            class="buttonReplay"
+            onclick="location.href='index.html'"
+          >
+            ¡Juega de nuevo!
+          </button>
+        </div>
+      </section>
+      <!--Perdiste-->
+      <section id="you-lose">
+        <img src="./ImgGif/cry.gif" alt="perdiste" />
+        <div class="buttonReplay2">
+          <button
+            type="buttom"
+            class="buttonReplay"
+            onclick="location.href='index.html'"
+          >
+            ¡Juega de nuevo!
+          </button>
+        </div>
+      </section>
 
       <!--Acá termina lado izquierdo-->
       <div id="root"></div>
