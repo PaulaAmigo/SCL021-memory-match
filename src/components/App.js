@@ -45,7 +45,7 @@ const App = () => {
 const generadorImagenes = (data) => {
   data.sort(() => Math.random() - 0.5); //se crea la funcion que mezcla las cartas
   const arrCards = [];
-  let contadorDeIntentos = 7;
+  let contadorDeIntentos = 10;
   let intentos = document.querySelector(".intentos");
   intentos.textContent = " Intentos : " + contadorDeIntentos;
 
